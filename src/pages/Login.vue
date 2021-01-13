@@ -36,8 +36,8 @@ export default {
   data(){
       return {
           loginData: {
-              username: '',
-              password: ''
+              username: 'admin',
+              password: 'admin888'
           },
           rules: {
             username: {required:true,message:'请输入登录账号',trigger:'blur'},

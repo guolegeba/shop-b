@@ -10,6 +10,8 @@
         <BarT />
         <el-divider/>
         <LineT/>
+        <el-divider/>
+        <PieT/>
     </el-card>
 </template>
 
@@ -18,13 +20,15 @@ import BarT from './echarts/BarT';
 import LineT from './echarts/LineT';
 import Wangedit from './echarts/Wangedit';
 import StylusT from './echarts/StylusT';
+import PieT from './echarts/PieT';
 
 export default {
     components: {
         BarT,
         LineT,
         Wangedit,
-        StylusT
+        StylusT,
+        PieT
     }
 
 }

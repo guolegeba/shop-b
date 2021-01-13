@@ -1,5 +1,5 @@
 <template>
-  <el-dialog @close="resetForm" title="收货地址" :visible.sync="info.isShow">
+  <el-dialog @close="resetForm" :title="formData.id>0 ? '编辑' : '新增'" :visible.sync="info.isShow">
      <el-form ref="menuForm" :model="formData" :rules="rules" label-width="60px">
       <el-form-item label="类型" prop="type">
         <el-radio-group v-model="formData.type">

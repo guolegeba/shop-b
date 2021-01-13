@@ -11,6 +11,10 @@ import role from './modules/role';
 import admin from './modules/admin';
 import cate from './modules/cate';
 import specs from './modules/specs';
+import goods from './modules/goods';
+import member from './modules/member';
+import banner from './modules/banner';
+import seckill from './modules/seckill';
 
 // 创建数据对象
 const store = new Vuex.Store({
@@ -37,7 +41,11 @@ const store = new Vuex.Store({
         role,
         admin,
         cate,
-        specs
+        specs,
+        goods,
+        member,
+        banner,
+        seckill
     }
 });
 

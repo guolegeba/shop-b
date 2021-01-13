@@ -15,7 +15,7 @@ export async function getSpecsList(params){
 
 // 获取数据总条数
 export async function getSpecsTotal(){
-    const res = await axios.get('/usercount');
+    const res = await axios.get('/specscount');
     if(res.code===200){
         // console.log(res.list);
         return res.list[0].total;

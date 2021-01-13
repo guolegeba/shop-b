@@ -14,7 +14,8 @@
       <el-form-item label="账号" prop="username">
         <el-input placeholder="账号" v-model="formData.username" :disabled="formData.id>0 ? true : false"></el-input>
       </el-form-item>
-      <el-form-item label="密码" prop="password">
+      <!-- 动态校验密码框 -->
+      <el-form-item label="密码" prop="password" :rules="formData.id>0 ? {}: rulePwd.password" > 
         <el-input placeholder="密码" v-model="formData.password" type="password"></el-input>
       </el-form-item>
       <el-form-item label="状态" prop="status">
@@ -44,6 +45,8 @@ export default {
   created() {
     // 获取角色下拉列表数据
     this.getRoleListAction();
+
+    // 编辑数据监听
     vm.$on('sendAdminData',(obj)=>{
       obj.password='';
       // 更新表单数据模型
@@ -55,7 +58,8 @@ export default {
   data() {
     return {
       // 表单数据
-      formData: {        
+      formData: {
+        id: 0, //用户id        
         roleid: '', // 角色id        
         username: "", //  账号        
         password: "", // 密码
@@ -65,6 +69,10 @@ export default {
         roleid: { required: true, message: "请选择角色", trigger: "blur" },
         username: { required: true, message: "请输入账号", trigger: "blur" },
         status: { required: true, message: "请选择状态", trigger: "blur" }
+      },
+      // 密码框校验规则
+      rulePwd: {
+        password: { required: true, message: "请输入密码", trigger: "blur" }
       }
     };
   },
@@ -98,6 +106,7 @@ export default {
         // 重置表单状态
         this.$refs.formRef.resetFields();
         this.formData={
+          id:0,
           roleid: '',
           username: "",
           password: "",

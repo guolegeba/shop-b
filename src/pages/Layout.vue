@@ -20,47 +20,6 @@
             <i class="el-icon-menu"></i>
             <span slot="title">管理中心</span>
           </el-menu-item>
-
-          <!-- <el-submenu index="2">
-            <template slot="title">
-              <i class="el-icon-setting"></i>
-              <span>系统设置</span>
-            </template>
-            <el-menu-item index="/menu">
-              <span slot="title">菜单管理</span>
-            </el-menu-item>
-            <el-menu-item index="/role">
-              <span slot="title">角色管理</span>
-            </el-menu-item>
-            <el-menu-item index="/admin">
-              <span slot="title">管理员管理</span>
-            </el-menu-item>
-          </el-submenu>
-
-          <el-submenu index="3">
-            <template slot="title">
-              <i class="el-icon-goods"></i>
-              <span>商城管理</span>
-            </template>
-            <el-menu-item index="/cate">
-              <span slot="title">分类管理</span>
-            </el-menu-item>
-            <el-menu-item index="/specs">
-              <span slot="title">规格管理</span>
-            </el-menu-item>
-            <el-menu-item index="/goods">
-              <span slot="title">商品管理</span>
-            </el-menu-item>
-            <el-menu-item index="3-4">
-              <span slot="title">轮播图管理</span>
-            </el-menu-item>
-            <el-menu-item index="3-5">
-              <span slot="title">会员管理</span>
-            </el-menu-item>
-            <el-menu-item index="3-6">
-              <span slot="title">活动管理</span>
-            </el-menu-item>
-          </el-submenu> -->
           
           <!-- 动态渲染菜单 -->
           <el-submenu v-for='item in menuList' :key='item.id' :index="item.id+''">

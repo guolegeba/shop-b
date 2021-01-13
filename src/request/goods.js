@@ -3,6 +3,7 @@ import axios from '@/utils/http';
 
 // 获取商品列表
 export async function getGoodsList(params){
+    // params{size,page}
     const res = await axios.get('/goodslist',{params});
     if(res.code===200){
         return res.list;

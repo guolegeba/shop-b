@@ -18,6 +18,12 @@ const Cate=()=>import('@/pages/cate/Index');
 const Specs=()=>import('@/pages/specs/Index');
 // 商品信息
 const Goods=()=>import('@/pages/goods/Index');
+// 会员管理
+const Member=()=>import('@/pages/member/Index');
+// 轮播图管理
+const Banner=()=>import('@/pages/banner/Index');
+// 限时秒杀管理
+const Seckill=()=>import('@/pages/seckill/Index');
 
 
 Vue.use(Router);
@@ -87,6 +93,27 @@ const routes = [
         component:Goods,
         meta:{
           title:'商品信息'
+        }
+      },
+      {
+        path:'/member',
+        component:Member,
+        meta:{
+          title:'会员管理'
+        }
+      },
+      {
+        path:'/banner',
+        component:Banner,
+        meta:{
+          title:'轮播图管理'
+        }
+      },
+      {
+        path:'/seckill',
+        component:Seckill,
+        meta:{
+          title:'限时秒杀管理'
         }
       }
     ]
