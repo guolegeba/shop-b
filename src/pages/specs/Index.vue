@@ -1,6 +1,6 @@
 <template>
     <el-card>
-      <el-button @click="info.isShow=!info.isShow" type="primary" icon="el-icon-circle-plus-outline">新增</el-button>
+      <el-button @click="info.isShow=true" type="primary" icon="el-icon-circle-plus-outline">新增</el-button>
       <el-divider/>
       <!-- 调用子组件List -->
       <List @updateList="updateList" @sendData="sendData" @updatePage="updatePage" :specsList="specsList" :specsTotal="specsTotal" :size="size" :page="page" />
@@ -10,7 +10,6 @@
 </template>
 
 <script>
-
   // 导入vuex辅助方法
 import { mapState,mapActions } from 'vuex';
 

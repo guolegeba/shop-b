@@ -1,7 +1,7 @@
 <template>
   <el-card>
       <List :memberList='memberList' />
-      <Modal />
+      <Modal @updateList='updateList' :info='info'/>
   </el-card>
 </template>
 
@@ -17,6 +17,13 @@ export default {
     created() {
         this.getMemberListAction();
     },
+    data(){
+        return {
+            info:{
+                isShow:false
+            }
+        }
+    },
     computed: {
         ...mapState({
             memberList: state => state.member.memberList
@@ -24,6 +31,9 @@ export default {
     },
     methods: {
         ...mapActions("member", ["getMemberListAction"]),
+        updateList(){
+            this.getMemberListAction();
+        }
     }
 }
 </script>

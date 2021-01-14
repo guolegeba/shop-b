@@ -3,7 +3,7 @@
     @close="reset"
     :title="formData.id>0?'编辑':'新增'"
     :visible.sync="info.isShow"
-    width="100%"
+    width="80%"
   >
     <el-form ref="formRef" :model="formData" :rules="rules" label-width="80px">
       <el-tabs v-model="activeName" @tab-click="handleClick">

@@ -1,6 +1,6 @@
 <template>
-  <el-dialog @close="resetForm" title="新增" :visible.sync="info.isShow">
-    <el-form ref="formRef" :model="formData" :rules="rules" label-width="80px">
+  <el-dialog @close="resetForm" :title="formData.id>0?'编辑':'新增'" :visible.sync="info.isShow">
+    <el-form ref="formRef" :model="formData" :rules="rules" label-width="80px" >
       <el-form-item label="上级" prop="pid">
         <el-select v-model="formData.pid">
           <el-option :value="0" label="顶级分类"></el-option>

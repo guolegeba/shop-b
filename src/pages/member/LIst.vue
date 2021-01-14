@@ -7,7 +7,7 @@
       <el-table-column
         prop="uid"
         label="用户ID"
-        min-width="180"
+        min-width="250"
         align=center>
       </el-table-column>
       <el-table-column
@@ -23,7 +23,8 @@
       <el-table-column
         prop="addtime"
         label="注册日期"
-        align=center>
+        align=center
+        min-width="100">
         <template v-slot="props">
             {{ props.row.addtime | timefmt }}
         </template>
@@ -33,7 +34,8 @@
         label="状态"
         align=center>
         <template v-slot="props">
-            {{ props.row.status }}
+            <el-tag type="success" v-if="props.row.status===1">正常</el-tag>
+          <el-tag type="danger" v-else>禁用</el-tag>
         </template>
       </el-table-column>
       <el-table-column
@@ -48,25 +50,18 @@
 </template>
 
 <script>
-import { disableTransformOptionMerge } from 'echarts/lib/data/helper/sourceManager';
+import { timefmt } from '@/utils/filters.js';
+import vm from '@/utils/vm';
+
 export default {
     props: ['memberList'],
     methods: {
       edit(row){
-        console.log(row);
+        vm.$emit('sendMemberData',{...row})
       }
     },
     filters:{
-        timefmt(timer) {
-            const time = new Date(Number(timer));
-            const y = time.getFullYear();
-            const m = time.getMonth() + 1;
-            const d = time.getDate();
-            const h = time.getHours();
-            const mm = time.getMinutes();
-            const s = time.getSeconds();
-            return `${y}-${m}-${d} ${h}:${mm}:${s}`;
-        }
+        timefmt
     }
 }
 </script>
