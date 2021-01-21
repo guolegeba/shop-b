@@ -81,7 +81,6 @@ export default {
       this.$emit("updateList", page);
     },
     // 更新商品状态
-    // row: 商品对象
     // attr: 要修改的属性(isnew,ishot)
     statusChange(row, attr) {
       // 更新状态
@@ -89,6 +88,7 @@ export default {
       const fd = new FormData();
       fd.append("id", row.id);
       fd.append(attr, row[attr]);
+      console.log(fd);
       this.$http.post("/goodsedit", fd).then(res => {
         if (res.code === 200) {
           return this.$success(res.msg);
@@ -98,7 +98,6 @@ export default {
     },
     // 编辑
     edit(row) {
-      // 1-通过自定义事件将待编辑的商品对象传递给兄弟组件Modal
       vm.$emit("sendGoodsData", { ...row });
     },
     // 删除

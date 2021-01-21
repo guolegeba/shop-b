@@ -113,7 +113,7 @@ const routes = [
         path:'/seckill',
         component:Seckill,
         meta:{
-          title:'限时秒杀管理'
+          title:'秒杀活动'
         }
       }
     ]

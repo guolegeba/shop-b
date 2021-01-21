@@ -11,11 +11,9 @@ export default {
     },
     mutations: {
         goodsListInit(state,list){
-            console.log(list);
             state.goodsList = list;
         },
         goodsTotalInit(state,total){
-            console.log(total);
             state.goodsTotal = total;
         }
     },

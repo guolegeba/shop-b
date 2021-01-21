@@ -33,3 +33,14 @@ Vue.prototype.$delConfirm = function(callback){
         // 取消之后的逻辑操作       
       });
 }
+
+
+// 标准格式转时间戳
+Vue.prototype.$traTime1=function(time){
+  // 转成yy-mm-dd格式
+  var d = new Date(time);
+  d=d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+  // 转成时间戳
+  var s=new Date(d).getTime();
+  return s;
+}

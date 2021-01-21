@@ -30,12 +30,13 @@
 </template>
 
 <script>
+import vm from '@/utils/vm';
 import { timefmt } from '@/utils/filters.js';
 export default {
     props:['seckillList'],
     methods:{
       edit(row){
-        console.log(row);
+        vm.$emit('sendSeckillData',{...row})
       },
       del(row){
         console.log(row);
